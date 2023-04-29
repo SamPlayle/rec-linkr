@@ -32,11 +32,15 @@ class RandomAppender(Appender):
 
 class IndexGenerator():
     def __init__(self):
-        self.characters = "0123456789".split("")
+        self.characters = list("0123456789")
         self.length = 10
 
     def generate(self):
-        yield "".join(random.choice(self.characters) for i in range(self.length))
+        while True:
+            yield "".join(random.choice(self.characters) for i in range(self.length))
 
+class TestClass():
+    def __init__(self):
+        pass
 
 
